@@ -25,8 +25,8 @@ echo "cd /etc/profile.d/"
 cd /etc/profile.d/
 echo "rm anaconda.sh"
 rm anaconda.sh
-echo "wget https://raw.githubusercontent.com/jhover/dcde/master/etc/anaconda.sh"
-wget https://raw.githubusercontent.com/jhover/dcde/master/etc/anaconda.sh
+echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh"
+wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh
 
 # Update anaconda 
 echo "conda update -y -n base -c defaults conda"
@@ -61,8 +61,8 @@ pip install --upgrade pip
 
 pip install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
 
-echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.githubusercontent.com/jhover/dcde/master/etc/jupyterhub_config.py  "
-wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.githubusercontent.com/jhover/dcde/master/etc/jupyterhub_config.py
+echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py  "
+wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py
 
 
 
