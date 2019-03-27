@@ -1,8 +1,10 @@
 #!/bin/env python3
+#
+#  Simple local threads hello
+#
 
 import parsl
 from parsl.config import Config
-from parsl.executors.threads import ThreadPoolExecutor
 from parsl.configs.local_threads import config
 from parsl.app.app import python_app, bash_app
 
