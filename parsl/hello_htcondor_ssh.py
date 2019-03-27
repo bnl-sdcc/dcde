@@ -24,7 +24,7 @@ config = Config(
                 nodes_per_block=1,
                 init_blocks=4,
                 max_blocks=4,
-                scheduler_options='+ProjectName="OSG.sPHENIX"',
+                scheduler_options='accounting_group = group_sdcc.main',
                 worker_init='',     # Input your worker_init if needed
                 walltime="01:00:00"
             ),
