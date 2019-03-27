@@ -18,7 +18,7 @@ config = Config(
                 nodes_per_block=1,
                 init_blocks=1,
                 max_blocks=1,
-                scheduler_options='ProjectName="OSG.sPHENIX"',     # Input your scheduler_options if needed
+                scheduler_options='+ProjectName="OSG.sPHENIX"',     # Input your scheduler_options if needed
                 worker_init='',     # Input your worker_init if needed
                 requirements='',
                 
