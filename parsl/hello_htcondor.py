@@ -2,7 +2,7 @@
 #
 # Simple local submission to htcondor cluster.
 # 
-
+import parsl
 from parsl.channels import LocalChannel
 from parsl.providers import CondorProvider
 from parsl.config import Config
