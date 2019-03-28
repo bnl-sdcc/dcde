@@ -21,12 +21,13 @@ bash $SETUP -u -f -b -p $PREFIX
 echo "export PATH=$PATH:$PREFIX/bin"
 export PATH=$PATH:$PREFIX/bin
 
-echo "cd /etc/profile.d/"
-cd /etc/profile.d/
-echo "rm anaconda.sh"
-rm anaconda.sh
-echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh"
-wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh
+#echo "cd /etc/profile.d/"
+#cd /etc/profile.d/
+#echo "rm anaconda.sh"
+#rm anaconda.sh
+#echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh"
+#wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh
+
 
 # Update anaconda 
 echo "conda update -y -n base -c defaults conda"
@@ -52,6 +53,9 @@ conda update -y conda python
 
 echo "conda install -y -c conda-forge jupyterhub nodejs"
 conda install -y -c conda-forge jupyterhub nodejs
+
+echo ". /usr/local/anaconda3/etc/profile.d/conda.sh "
+. /usr/local/anaconda3/etc/profile.d/conda.sh
 
 echo "conda activate base"
 conda activate base
