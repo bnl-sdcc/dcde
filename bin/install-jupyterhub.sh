@@ -79,3 +79,6 @@ echo "cd ~/tmp"
 cd ~/tmp 
 echo "rm -f $SETUP"
 rm -f $SETUP
+
+
+
