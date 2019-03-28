@@ -26,7 +26,6 @@ config = Config(
                 max_blocks=4,
                 scheduler_options='accounting_group = group_sdcc.main',
                 worker_init='',     # Input your worker_init if needed
-                walltime="01:00:00"
             ),
             controller=Controller(public_ip='130.199.185.10'),    # Please replace PUBLIC_IP with your public ip
         )
