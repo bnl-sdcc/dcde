@@ -65,6 +65,9 @@ echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.git
 wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py
 
 
+echo "wget --output-document  /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service  "
+wget --output-document  /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service
+
 
 # Cleanup
 echo "cd ~/tmp"

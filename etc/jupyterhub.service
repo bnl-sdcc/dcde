@@ -1,0 +1,13 @@
+[Unit]
+Description=Jupyterhub
+After=network-online.target
+
+[Service]
+User=root
+ExecStart=/bin/bash -c 'PATH=/usr/local/anaconda3/bin:$PATH exec /usr/local/anaconda3/bin/jupyterhub -f /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py --log-file=/var/log/jupyterhub.log --debug'
+WorkingDirectory=/usr/local/anaconda3/etc/jupyterhub/
+
+[Install]
+WantedBy=multi-user.target
+
+
