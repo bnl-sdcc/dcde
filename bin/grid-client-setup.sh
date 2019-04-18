@@ -37,8 +37,8 @@ if [ $RHEL7 -eq 1 ] ; then
 		rm epel-release-latest-7.noarch.rpm
 		
 		echo "Installing gsi clients..."
-		echo yum -y install gsi-openssh-clients fetch-crl
-		yum -y install gsi-openssh-clients fetch-crl
+		echo yum -y install gsi-openssh-clients globus-proxy-utils fetch-crl
+		yum -y install gsi-openssh-clients globus-proxy-utils fetch-crl
 	
 		echo "Installing OSG CI certs..."
 		echo wget https://repo.opensciencegrid.org/osg/3.4/el7/release/x86_64/osg-ca-certs-1.78-1.osg34.el7.noarch.rpm
@@ -46,8 +46,7 @@ if [ $RHEL7 -eq 1 ] ; then
 		echo rpm -ivh osg-ca-certs-1.78-1.osg34.el7.noarch.rpm
 		rpm -ivh osg-ca-certs-1.78-1.osg34.el7.noarch.rpm
 		rm osg-ca-certs-1.78-1.osg34.el7.noarch.rpm
-	
-	
+
 	
 		echo "Installing ANL Entrust CA certs..."
 		cd /etc/grid-security/certificates/
