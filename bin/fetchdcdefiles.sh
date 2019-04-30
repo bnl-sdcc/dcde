@@ -5,4 +5,4 @@
 #  https://dev.racf.bnl.gov/dist/dcde/grid-mapfile -> /etc/grid-security/grid-mapfile
 # 
 
-if [-d /etc/
+if [-d /etc/globus/globus-acct-map] 
