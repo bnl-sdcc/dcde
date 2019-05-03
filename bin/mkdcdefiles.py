@@ -38,8 +38,11 @@ def dcde_ldap_query(password=None):
 	logging.debug("Peforming search...")
 	r = l.search_s(LDAPBASE,ldap.SCOPE_SUBTREE,LDAPFILTERSTR)
 	for dn,entry in r:
-		print('Processing %s %s' % (dn , entry['eduPersonPrincipalName']))
-		#handle_ldap_entry(entry)
+		try:
+			print('Processing %s %s' % (dn , entry['eduPersonPrincipalName']))
+			#handle_ldap_entry(entry)
+		except:
+			print("Error while handling %s" % dn)
 
 
 
