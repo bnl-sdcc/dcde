@@ -8,15 +8,24 @@
 #    -w XXXXXXXX \
 #    -b 'o=DCDE,o=CO,dc=cilogon,dc=org'
 #
-#
 import ldap
 import logging
+import shutil
+import tempfile
+
+
+HEADER='''# Globus map file for DCDE
+# /etc/globus/globus-acct-map
+# '''
+
 
 PASSWORD_FILE="/etc/dcde/dcdeldappass.txt"
+MAPFILE="/etc/globus/globus-acct-map"
 LDAPHOST=unicode('ldap.cilogon.org')
 LDAPBASE=unicode('o=DCDE,o=CO,dc=cilogon,dc=org')
 LDAPWHO=unicode('uid=readonly_user,ou=system,o=DCDE,o=CO,dc=cilogon,dc=org')
 LDAPFILTERSTR= unicode('(objectClass=person)')
+
 
 def read_password(password_file=PASSWORD_FILE):
 	f = open(PASSWORD_FILE)
@@ -47,7 +56,6 @@ def dcde_ldap_query(password=None):
 			#handle_ldap_entry(entry)
 		except:
 			print("Error while handling %s" % dn)
-
 	return userdict
 
 def parse_dn(dn):
@@ -58,12 +66,33 @@ def parse_dn(dn):
 	logging.debug('Got dcdid %s' % dcdid )
 	return dcdid
 
+def write_file(filepath, d):
+	''' 
+	Put dictionary in file. Write into temp file. Move to final path atomically. 
+	'''
+	logging.debug(d)
+	try:
+		tf, tfpath = tempfile.mkstemp(text=True)
+		f = open(tfpath, 'w')
+		logging.debug("Got tempfile %s %s" % ( tf, tfpath))
+		skeys = d.keys()
+		skeys.sort()
+		f.write(HEADER)
+		for k in skeys:
+			f.write("%s %s\n" % ( k, d[k]))
+		f.close()
+		shutil.move(tfpath, MAPFILE )
+		logging.info("Successfully updated %s" % MAPFILE)
+
+	except:
+		logging.error("Something went wrong writing file...")
+
 
 if __name__ == '__main__':
 	logging.getLogger().setLevel(logging.DEBUG)
 	p = read_password()
 	d = dcde_ldap_query(p)
-	print(d)
+	write_file(MAPFILE, d)
 	
 	
 
