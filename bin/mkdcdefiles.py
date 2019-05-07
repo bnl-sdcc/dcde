@@ -89,6 +89,8 @@ def write_file(filepath, d):
 
 if __name__ == '__main__':
 	
+	logging.basicConfig(format='%(asctime)s (UTC) [ %(levelname)s ] %(name)s %(filename)s:%(lineno)d %(funcName)s(): %(message)s')
+	
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-p', '--passfile', 
         				action="store", 
@@ -109,8 +111,9 @@ if __name__ == '__main__':
 	args= parser.parse_args()
 	
 	if args.debug:
-		logging.getLogger().setLevel(logging.DEBUG)
-
+		logging.basicConfig(format='%(asctime)s (UTC) [ %(levelname)s ] %(name)s %(filename)s:%(lineno)d %(funcName)s(): %(message)s', level=logging.DEBUG)
+	else:
+		logging.basicConfig(format='%(asctime)s (UTC) [ %(levelname)s ] %(name)s %(filename)s:%(lineno)d %(funcName)s(): %(message)s')
 	
 	p = read_password(args.passfile)
 	d = dcde_ldap_query(p)
