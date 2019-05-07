@@ -8,6 +8,7 @@
 #    -w XXXXXXXX \
 #    -b 'o=DCDE,o=CO,dc=cilogon,dc=org'
 #
+import argparse
 import ldap
 import logging
 import shutil
@@ -18,18 +19,16 @@ HEADER='''# Globus map file for DCDE
 # /etc/globus/globus-acct-map
 # '''
 
-
-PASSWORD_FILE="/etc/dcde/dcdeldappass.txt"
-MAPFILE="/etc/globus/globus-acct-map"
 LDAPHOST=unicode('ldap.cilogon.org')
 LDAPBASE=unicode('o=DCDE,o=CO,dc=cilogon,dc=org')
 LDAPWHO=unicode('uid=readonly_user,ou=system,o=DCDE,o=CO,dc=cilogon,dc=org')
 LDAPFILTERSTR= unicode('(objectClass=person)')
 
 
-def read_password(password_file=PASSWORD_FILE):
-	f = open(PASSWORD_FILE)
+def read_password(filepath):
+	f = open(filepath)
 	p = f.readlines()[0]
+	f.close()
 	p = unicode(p.strip())
 	logging.debug("Got password from file...")
 	return p
@@ -90,9 +89,24 @@ def write_file(filepath, d):
 
 if __name__ == '__main__':
 	logging.getLogger().setLevel(logging.DEBUG)
-	p = read_password()
+
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-p', '--passfile', 
+        				action="store", 
+        	   			dest='passfile', 
+                        default='/etc/dcde/dcdeldappass.txt',
+                        help='ldap password file path.')
+
+	parser.add_argument('-m', '--mapfile', 
+        				action="store", 
+        	   			dest='mapfile', 
+                        default="/etc/globus/globus-acct-map",
+                        help='path to write map file')	
+	
+	
+	p = read_password(passfile)
 	d = dcde_ldap_query(p)
-	write_file(MAPFILE, d)
+	write_file(mapfile, d)
 	
 	
 
