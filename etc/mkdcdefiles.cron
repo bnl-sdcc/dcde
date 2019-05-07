@@ -1,0 +1,6 @@
+#
+# Cron to create DCDE mapfile(s)
+# Place in /etc/cron.d
+# Pulls files every 2 hours. 
+# 
+15 */2 * * * jhover /usr/sbin/mkdcdefiles.sh -p /etc/dcde/ldappass.txt -m/gpfs02/usatlas/webrepo/dist/globus-acct-map />/dev/null 2>&1
