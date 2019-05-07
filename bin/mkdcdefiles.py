@@ -11,6 +11,7 @@
 import argparse
 import ldap
 import logging
+import os
 import shutil
 import tempfile
 
@@ -80,6 +81,7 @@ def write_file(filepath, d):
 		for k in skeys:
 			f.write("%s %s\n" % ( k, d[k]))
 		f.close()
+		os.chmod(tfpath, 0o444 )
 		shutil.move(tfpath, filepath )
 		logging.info("Successfully updated %s" % filepath)
 
@@ -111,9 +113,7 @@ if __name__ == '__main__':
 	args= parser.parse_args()
 	
 	if args.debug:
-		logging.basicConfig(format='%(asctime)s (UTC) [ %(levelname)s ] %(name)s %(filename)s:%(lineno)d %(funcName)s(): %(message)s', level=logging.DEBUG)
-	else:
-		logging.basicConfig(format='%(asctime)s (UTC) [ %(levelname)s ] %(name)s %(filename)s:%(lineno)d %(funcName)s(): %(message)s')
+		logging.getLogger().setLevel(logging.DEBUG)
 	
 	p = read_password(args.passfile)
 	d = dcde_ldap_query(p)
