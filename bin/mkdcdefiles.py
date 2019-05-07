@@ -80,16 +80,15 @@ def write_file(filepath, d):
 		for k in skeys:
 			f.write("%s %s\n" % ( k, d[k]))
 		f.close()
-		shutil.move(tfpath, MAPFILE )
-		logging.info("Successfully updated %s" % MAPFILE)
+		shutil.move(tfpath, filepath )
+		logging.info("Successfully updated %s" % filepath)
 
 	except:
 		logging.error("Something went wrong writing file...")
 
 
 if __name__ == '__main__':
-	logging.getLogger().setLevel(logging.DEBUG)
-
+	
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-p', '--passfile', 
         				action="store", 
@@ -103,10 +102,19 @@ if __name__ == '__main__':
                         default="/etc/globus/globus-acct-map",
                         help='path to write map file')	
 	
+	parser.add_argument('-d', '--debug', 
+						action="store_true", 
+						dest='debug', 
+						help='debug logging')
+	args= parser.parse_args()
 	
-	p = read_password(passfile)
+	if args.debug:
+		logging.getLogger().setLevel(logging.DEBUG)
+
+	
+	p = read_password(args.passfile)
 	d = dcde_ldap_query(p)
-	write_file(mapfile, d)
+	write_file(args.mapfile, d)
 	
 	
 
