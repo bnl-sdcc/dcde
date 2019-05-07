@@ -18,7 +18,8 @@ import tempfile
 
 HEADER='''# Globus map file for DCDE
 # /etc/globus/globus-acct-map
-# '''
+# 
+'''
 
 LDAPHOST=unicode('ldap.cilogon.org')
 LDAPBASE=unicode('o=DCDE,o=CO,dc=cilogon,dc=org')
