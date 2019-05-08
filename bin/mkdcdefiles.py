@@ -28,6 +28,7 @@ LDAPFILTERSTR= unicode('(objectClass=person)')
 
 
 def read_password(filepath):
+	filepath = os.path.expanduser(filepath)
 	f = open(filepath)
 	p = f.readlines()[0]
 	f.close()
@@ -72,6 +73,7 @@ def write_file(filepath, d):
 	Put dictionary in file. Write into temp file. Move to final path atomically. 
 	'''
 	logging.debug(d)
+	filepath = os.path.expanduser(filepath)
 	try:
 		tf, tfpath = tempfile.mkstemp(text=True)
 		f = open(tfpath, 'w')
@@ -115,7 +117,6 @@ if __name__ == '__main__':
 	
 	if args.debug:
 		logging.getLogger().setLevel(logging.DEBUG)
-	
 	p = read_password(args.passfile)
 	d = dcde_ldap_query(p)
 	write_file(args.mapfile, d)
