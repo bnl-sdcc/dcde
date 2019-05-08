@@ -51,7 +51,7 @@ if [ $RHEL7 -eq 1 ] ; then
 		echo "/usr/sbin/fetchdcdefiles.sh"
 		/usr/sbin/fetchdcdefiles.sh
 
-		echo "You must now register your instance with globus:   https://developers.globus.org/"
+		echo "You must now register your instance with globus:  https://auth.globus.org/v2/web/developers  "
 		echo "client_id and client_secret values MUST be set in /etc/oauth_ssh/globus-ssh.conf"
 		echo "Afterwards, to start service run 'systemctl start globus-sshd.service' "
 		echo "Done"
