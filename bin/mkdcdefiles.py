@@ -88,7 +88,7 @@ def write_file(filepath, d):
 			f.write("%s %s\n" % ( k, d[k]))
 		f.close()
 		logging.debug("Changing mode of %s to world readable" % tfpath)
-		os.chmod(tfpath, 0o444 )
+		os.chmod(tfpath, 0o644 )
 		logging.debug("Moving file from %s -> %s" % (tfpath, filepath))
 		shutil.move(tfpath, filepath )
 		logging.info("Successfully updated %s" % filepath)
