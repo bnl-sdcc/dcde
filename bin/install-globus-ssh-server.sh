@@ -26,12 +26,6 @@ if [ $RHEL7 -eq 1 ] ; then
 		echo "Ensure ssh server..."
 		echo "yum -y install openssh-server"
 		yum -y install openssh-server
-
-		echo "Setup distinct openssh server instance..."
-		echo "mkdir -p /etc/globus-ssh"
-		mkdir -p /etc/globus-ssh
-		echo "cd /etc/globus-ssh ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/sshd_config -O sshd_config"
-		cd /etc/globus-ssh ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/sshd_config -O sshd_config
 		
 		echo "Install oauth-ssh PAM RPM..."		
 		echo "yum -y install https://dev.racf.bnl.gov/dist/dcde/rpms/rhel7/oauth-ssh-0.9-1.el7.x86_64.rpm"		
