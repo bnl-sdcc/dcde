@@ -14,6 +14,7 @@ import logging
 import os
 import shutil
 import tempfile
+import traceback
 
 
 HEADER='''# Globus map file for DCDE
@@ -93,7 +94,8 @@ def write_file(filepath, d):
 		logging.info("Successfully updated %s" % filepath)
 
 	except:
-		logging.error("Something went wrong writing file...")
+		logging.error(traceback.format_exc(None))
+		#logging.error("Something went wrong writing file...")
 
 
 if __name__ == '__main__':
