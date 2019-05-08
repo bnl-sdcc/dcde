@@ -27,10 +27,15 @@ if [ $RHEL7 -eq 1 ] ; then
 		echo "yum -y install openssh-server"
 		yum -y install openssh-server
 
+		echo "Setup distinct openssh server instance..."
+		echo "mkdir -p /etc/globus-ssh"
+		mkdir -p /etc/globus-ssh
+		echo "cd /etc/globus-ssh ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/sshd_config -O sshd_config"
+		cd /etc/globus-ssh ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/sshd_config -O sshd_config
+		
 		echo "Install oauth-ssh PAM RPM..."		
 		echo "yum -y install https://dev.racf.bnl.gov/dist/dcde/rpms/rhel7/oauth-ssh-0.9-1.el7.x86_64.rpm"		
 		yum -y install https://dev.racf.bnl.gov/dist/dcde/rpms/rhel7/oauth-ssh-0.9-1.el7.x86_64.rpm
-
 
 		echo "Install globus-ssh configuration RPM..."
 		echo "yum -y install https://dev.racf.bnl.gov/dist/dcde/rpms/rhel7/globus-sshd-config-0.90-1.noarch.rpm"
@@ -38,11 +43,11 @@ if [ $RHEL7 -eq 1 ] ; then
 
 		echo "Setup globus-acct-map fetch script and cron file..."
 
-		echo "cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/bin/fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh"
-		cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/bin/fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh
+		echo "cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/bin/fetchdcdefiles.sh -O fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh"
+		cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/bin/fetchdcdefiles.sh -O fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh
 
-		echo "cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/fetchdcdefiles.cron"
-		cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/fetchdcdefiles.cron
+		echo "cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/fetchdcdefiles.cron -O fetchdcdefiles.cron"
+		cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/fetchdcdefiles.cron -O fetchdcdefiles.cron
 		
 		echo "Enable service.."
 		echo "systemctl enable globus-sshd.service"
