@@ -29,6 +29,7 @@ LDAPFILTERSTR= unicode('(objectClass=person)')
 
 def read_password(filepath):
 	filepath = os.path.expanduser(filepath)
+	logging.debug("Opening pass file %s" % filepath)
 	f = open(filepath)
 	p = f.readlines()[0]
 	f.close()
@@ -74,6 +75,7 @@ def write_file(filepath, d):
 	'''
 	logging.debug(d)
 	filepath = os.path.expanduser(filepath)
+	logging.debug("Target file path is %s" % filepath)
 	try:
 		tf, tfpath = tempfile.mkstemp(text=True)
 		f = open(tfpath, 'w')
@@ -84,7 +86,9 @@ def write_file(filepath, d):
 		for k in skeys:
 			f.write("%s %s\n" % ( k, d[k]))
 		f.close()
+		logging.debug("Changing mode of %s to world readable" % tfpath)
 		os.chmod(tfpath, 0o444 )
+		logging.debug("Moving file from %s -> %s" % (tfpath, filepath))
 		shutil.move(tfpath, filepath )
 		logging.info("Successfully updated %s" % filepath)
 
