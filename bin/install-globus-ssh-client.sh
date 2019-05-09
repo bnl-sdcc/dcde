@@ -6,7 +6,7 @@ RHEL7=0
 NONRHEL=0
 INSTALL=0
 
-if grep "Maipo\|Nitrogen" /etc/redhat-release ; then
+if grep "Maipo\|Nitrogen\|CentOS Linux release 7" /etc/redhat-release ; then
     echo "RHEL/SL/Centos 7"
 	RHEL7=1    
 fi
