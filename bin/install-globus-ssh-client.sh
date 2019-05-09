@@ -28,8 +28,8 @@ if [ $RHEL7 -eq 1 ] ; then
 		rpm -ivh epel-release-latest-7.noarch.rpm
 		rm epel-release-latest-7.noarch.rpm
 
-	    echo "yum install python2-pip"
-		yum install python2-pip
+	    echo "yum -y install python2-pip"
+		yum -y install python2-pip
 		
 		echo "pip install --upgrade pip"
 		pip install --upgrade pip
