@@ -51,8 +51,16 @@ if [ $RHEL7 -eq 1 ] ; then
 		echo "/usr/sbin/fetchdcdefiles.sh"
 		/usr/sbin/fetchdcdefiles.sh
 
-		echo "You must now register your instance with globus:  https://auth.globus.org/v2/web/developers  "
+		echo "1) You must now register your instance with globus:  https://auth.globus.org/v2/web/developers  "
 		echo "client_id and client_secret values MUST be set in /etc/oauth_ssh/globus-ssh.conf"
+		echo ""
+		echo "2) The client_id from globus must be added to your site DNS metadata as text information visible externally,e g."
+		echo "     nslookup -type=txt spce01.sdcc.bnl.gov
+		echo "	   Server:		192.168.1.1"
+		echo "     Address:	192.168.1.1#53"
+		echo "     Non-authoritative answer:"
+		echo "     spce01.sdcc.bnl.gov	text = \"0f9b2b65-3c35-46ee-875f-da6d17b60b95\""
+		echo ""		
 		echo "Afterwards, to start service run 'systemctl start globus-sshd.service' "
 		echo "Done"
 		
