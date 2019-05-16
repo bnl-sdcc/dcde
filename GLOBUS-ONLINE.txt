@@ -1,0 +1,39 @@
+Hi John,
+
+See below for the recipe.
+
+Thanks,
+Tejas.
+
+1. curl -LOs https://downloads.globus.org/toolkit/globus-connect-server/globus-connect-server-repo-latest.noarch.rpm
+2. rpm --import https://downloads.globus.org/toolkit/gt6/stable/repo/rpm/RPM-GPG-KEY-Globus
+3. Enable EPEL repo.
+4. yum install globus-connect-server-repo-latest.noarch.rpm
+5. yum install globus-connect-server
+
+6. Modify "/etc/globus-connect-server.conf" (Below non-default variables).
+
+Globus User Configuration -
+;User = %(GLOBUS_USER)s
+;Password = %(GLOBUS_PASSWORD)s
+Globus Endpoint Configuration -
+;Name = %(SHORT_HOSTNAME)s
+Security Configuration -
+IdentityMethod = CILogon
+AuthorizationMethod = Gridmap
+Gridmap = /etc/grid-security/grid-mapfile
+CILogonIdentityProvider = %(Organization_name)
+GridFTP Configuration -
+Server = %(hostname)
+RestrictPaths = %(path)s
+MyProxy Configuration -
+Server = %(hostname)
+[OAuth] -
+;Server = %(HOSTNAME)s
+
+7. chmod 760 /etc/globus-connect-server.conf
+
+8. Open appropriate filewall ports. - TCP [443,7512,2811,50000:51000]
+9. Mount required storage filesystems.
+10. globus-connect-server-setup
+11. More details - refer https://docs.globus.org/globus-connect-server-installation-guide/
