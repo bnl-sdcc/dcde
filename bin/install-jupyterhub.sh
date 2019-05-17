@@ -3,7 +3,7 @@
 # Script to install and maintain a comanage-enabled Jupyterhub service.   
 #
 SETUP="Anaconda3-5.3.1-Linux-x86_64.sh"
-PREFIX="/home/anaconda3"
+PREFIX="/usr/local/anaconda3"
 
 if [ `whoami` != 'root' ] ; then
     echo "You must be root to do this."
