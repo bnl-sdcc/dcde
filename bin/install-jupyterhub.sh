@@ -33,8 +33,8 @@ export PATH=$PATH:$PREFIX/bin
 echo "conda update -y -n base -c defaults conda"
 conda update -y -n base -c defaults conda
 
-echo "conda install python=3.6 conda-manager"
-conda install python=3.6 conda-manager
+echo "conda install python=3.6 "
+conda install python=3.6 
 
 echo "conda update conda python"
 conda update conda python
@@ -66,12 +66,12 @@ pip install --upgrade pip
 echo "pip install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade "
 pip install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
 
-echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py  "
-wget --output-document /usr/local/anaconda3/etc/jupyterhub https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py
+echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py  "
+wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py
 
 
-echo "wget --output-document  /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service  "
-wget --output-document  /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service
+echo "wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service  "
+wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service
 
 
 # Cleanup
@@ -81,7 +81,10 @@ echo "rm -f $SETUP"
 rm -f $SETUP
 
 echo "1) You must now register your instance with COManage. Contact jhover@bnl.gov with information about your hostname.  "
-echo "client_id and client_secret values MUST be set in /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py "
+echo "   client_id and client_secret values MUST be set in /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py "
+echo ""
+echo "2) You must get a valid SSL host certificate. Place cert and key files at /usr/local/anaconda3/etc/jupyterhub/ssl/[certificate.crt|key.pem] 
+echo ""
 echo ""
 echo "2) Ensure port 3000 is open inbound to the host. 
 echo ""
