@@ -42,15 +42,6 @@ conda update conda python
 echo "conda install -c conda-forge"
 conda install -c conda-forge
 
-# Install JupyterHub
-#conda install python=3.6 conda-manager
-
-#echo "conda install python=3.6" 
-#conda install python=3.6
-
-echo "conda update -y conda python"
-conda update -y conda python
-
 echo "conda install -y -c conda-forge jupyterhub nodejs"
 conda install -y -c conda-forge jupyterhub nodejs
 
