@@ -79,15 +79,15 @@ cd ~/tmp
 echo "rm -f $SETUP"
 rm -f $SETUP
 
-echo "1) You must now register your instance with COManage. Contact jhover@bnl.gov with information about your hostname.  "
+echo "1 You must now register your instance with COManage. Contact jhover@bnl.gov with information about your hostname.  "
 echo "   client_id and client_secret values MUST be set in /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py "
 echo ""
-echo "2) You must get a valid SSL host certificate. Place cert and key files at /usr/local/anaconda3/etc/jupyterhub/ssl/[certificate.crt|key.pem] 
+echo "2 You must get a valid SSL host certificate. Place cert and key files at /usr/local/anaconda3/etc/jupyterhub/ssl/[certificate.crt|key.pem] 
 echo ""
 echo ""
-echo "2) Ensure port 3000 is open inbound to the host. 
+echo "3 Ensure port 3000 is open inbound to the host. " 
 echo ""
-echo "3) To start service run systemctl start jupyterhub.service "
+echo "4 To start service run systemctl start jupyterhub.service "
 echo "Done"
 
 
