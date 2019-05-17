@@ -33,8 +33,8 @@ export PATH=$PATH:$PREFIX/bin
 echo "conda update -y -n base -c defaults conda"
 conda update -y -n base -c defaults conda
 
-echo "conda install python=3.6 "
-conda install python=3.6 
+echo "conda install python=3.7 "
+conda install python=3.7 
 
 echo "conda update conda python"
 conda update conda python
