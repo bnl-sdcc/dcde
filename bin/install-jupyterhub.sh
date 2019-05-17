@@ -69,7 +69,6 @@ pip install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
 echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py  "
 wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py
 
-
 echo "wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service  "
 wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service
 
@@ -88,7 +87,7 @@ echo ""
 echo ""
 echo "2) Ensure port 3000 is open inbound to the host. 
 echo ""
-echo "3) To start service run 'systemctl start jupyterhub.service' "
+echo "3) To start service run systemctl start jupyterhub.service "
 echo "Done"
 
 
