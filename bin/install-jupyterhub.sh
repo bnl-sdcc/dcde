@@ -89,5 +89,3 @@ echo "3 Ensure port 3000 is open inbound to the host. "
 echo ""
 echo "4 To start service run systemctl start jupyterhub.service "
 echo "Done"
-
-
