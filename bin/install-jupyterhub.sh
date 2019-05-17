@@ -45,8 +45,8 @@ conda install -c conda-forge
 # Install JupyterHub
 #conda install python=3.6 conda-manager
 
-echo "conda install python=3.6" 
-conda install python=3.6
+#echo "conda install python=3.6" 
+#conda install python=3.6
 
 echo "conda update -y conda python"
 conda update -y conda python
