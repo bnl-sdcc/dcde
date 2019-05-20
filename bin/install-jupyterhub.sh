@@ -52,10 +52,10 @@ echo "conda activate base"
 conda activate base
 
 echo "pip install --upgrade pip"
-pip install --upgrade pip
+pip3 install --upgrade pip
 
 echo "pip install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade "
-pip install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
+pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
 
 echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py  "
 wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py
