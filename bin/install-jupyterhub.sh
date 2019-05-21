@@ -83,5 +83,7 @@ echo "     https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/fetchdcdef
 echo ""
 echo "4 Ensure port 3000 is open inbound to the host, and other ports are not." 
 echo ""
-echo "5 To start service run systemctl start jupyterhub.service "
+echo "5 To enable service run systemctl enable jupyterhub.service "
+echo ""
+echo "6 To start service run systemctl start jupyterhub.service "
 echo "Done"
