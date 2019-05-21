@@ -39,9 +39,6 @@ conda install python=3.7
 echo "conda update conda python"
 conda update conda python
 
-echo "conda install -c conda-forge"
-conda install -c conda-forge
-
 echo "conda install -y -c conda-forge jupyterhub nodejs"
 conda install -y -c conda-forge jupyterhub nodejs
 
