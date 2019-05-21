@@ -48,8 +48,8 @@ echo ". /usr/local/anaconda3/etc/profile.d/conda.sh "
 echo "conda activate base"
 conda activate base
 
-echo "pip3 install --upgrade pip"
-pip3 install --upgrade pip
+echo "pip install --upgrade pip"
+pip install --upgrade pip
 
 echo "pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade "
 pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
