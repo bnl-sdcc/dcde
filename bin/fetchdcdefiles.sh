@@ -1,4 +1,4 @@
-#!/bin/bash*
+#!/bin/bash
 # Script to download DCDE mapfile(s)
 #
 # https://dev.racf.bnl.gov/dist/dcde/globus-acct-map -> /etc/globus/globus-acct-map

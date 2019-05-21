@@ -51,6 +51,9 @@ conda activate base
 echo "pip install --upgrade pip"
 pip install --upgrade pip
 
+echo "pip install --upgrade oauthenticator"
+pip install --upgrade oauthenticator
+
 echo "pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade "
 pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
 
