@@ -37,11 +37,11 @@ if [ $RHEL7 -eq 1 ] ; then
 
 		echo "Setup globus-acct-map fetch script and cron file..."
 
-		echo "cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/bin/fetchdcdefiles.sh -O fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh"
-		cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/bin/fetchdcdefiles.sh -O fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh
+	    echo "cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/bin/fetchdcdefiles.sh -O fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh"
+	    cd /usr/sbin ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/bin/fetchdcdefiles.sh -O fetchdcdefiles.sh ; chmod +x fetchdcdefiles.sh
 
-		echo "cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/fetchdcdefiles.cron -O fetchdcdefiles.cron"
-		cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/fetchdcdefiles.cron -O fetchdcdefiles.cron
+	    echo "cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/fetchdcdefiles.cron -O fetchdcdefiles.cron"
+	    cd /etc/cron.d ; wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/fetchdcdefiles.cron -O fetchdcdefiles.cron
 		
 		echo "Enable service.."
 		echo "systemctl enable globus-sshd.service"

@@ -26,8 +26,8 @@ echo "cd /etc/profile.d/"
 cd /etc/profile.d/
 echo "rm anaconda.sh"
 rm anaconda.sh
-echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh"
-wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh
+echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/anaconda.sh"
+wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/anaconda.sh
 
 # Update anaconda 
 echo "conda update -y -n base -c defaults conda"
