@@ -25,8 +25,8 @@ export PATH=$PATH:$PREFIX/bin
 #cd /etc/profile.d/
 #echo "rm anaconda.sh"
 #rm anaconda.sh
-#echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh"
-#wget https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/anaconda.sh
+#echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/anaconda.sh"
+#wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/anaconda.sh
 
 
 # Update anaconda 
@@ -57,11 +57,11 @@ pip install --upgrade oauthenticator parsl
 echo "pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade "
 pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
 
-echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py  "
-wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub_config.py
+echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub_config.py  "
+wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub_config.py
 
-echo "wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service  "
-wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde/master/etc/jupyterhub.service
+echo "wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub.service  "
+wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub.service
 
 
 # Cleanup
