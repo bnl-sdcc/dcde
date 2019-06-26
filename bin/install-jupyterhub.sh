@@ -58,7 +58,7 @@ echo "pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade "
 pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
 
 echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub_config_comanage.py  "
-wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub_config_comanage.py
+wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config_comanage.py https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub_config_comanage.py
 
 echo "wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub.service  "
 wget --output-document /etc/systemd/system/jupyterhub.service https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub.service
