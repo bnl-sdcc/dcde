@@ -17,15 +17,16 @@ c.JupyterHub.authenticator_class = LocalCOManageOAuthenticator
 # Normalized UNIX account is eppn with '@' and "." removed. E.g. 
 # jhover@bnl.gov -> jhoverbnlgov
 # Auto-creates local account if missing. 
-c.LocalAuthenticator.unixname_source = 'eppn_normalized'
+#c.LocalAuthenticator.unixname_source = 'eppn_normalized'
+#c.LocalAuthenticator.create_system_users = True
 
 # Settings to use /etc/globus/globus-acct-map to handle eppn -> unix account mapping/spawning
 # Auto-creation of local account optional. 
 # Assumes mapfile in form <eppn>   <unixaccountname>, e.g. 
 # jhover@bnl.gov dcde1000001
 # Jupyterhub user is still eppn, only local unix account comes from map. 
-
-#c.COManageOAuthenticator.unixname_source = 'eppn_mapfile'
+#c.LocalAuthenticator.create_system_users = False
+c.COManageOAuthenticator.unixname_source = 'eppn_mapfile'
 c.LocalAuthenticator.eppn_mapfile = '/etc/globus/globus-acct-map'
 
 
@@ -43,6 +44,7 @@ c.JupyterHub.ssl_cert = '/usr/local/anaconda3/etc/jupyterhub/ssl/certificate.crt
 c.JupyterHub.ssl_key = '/usr/local/anaconda3/etc/jupyterhub/ssl/key.pem'
 c.Spawner.debug = True
 c.Authenticator.enable_auth_state = True
-c.LocalAuthenticator.create_system_users = True
+#c.LocalAuthenticator.delete_invalid_users = True
+
 
 
