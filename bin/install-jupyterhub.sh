@@ -83,7 +83,7 @@ echo "     https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/fet
 echo ""
 echo "4 Generate JUPYTERHUB_CRYPT_KEY with 'openssl rand -hex 32' and set it in /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config.py"
 echo ""
-echo "5 Ensure port 3000 is open inbound to the host, and other ports are not." 
+echo "5 Ensure port 8000 is open inbound to the host, and other ports are not." 
 echo ""
 echo "6 To enable service run systemctl enable jupyterhub.service "
 echo ""
