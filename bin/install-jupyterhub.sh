@@ -54,8 +54,8 @@ pip install --upgrade pip
 echo "pip install --upgrade oauthenticator parsl "
 pip install --upgrade oauthenticator parsl
 
-echo "pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade "
-pip3 install git+git://github.com/bnl-sdcc/pycomanage.git --upgrade
+echo "pip3 install git+https://github.com/bnl-sdcc/pycomanage.git --upgrade "
+pip3 install git+https://github.com/bnl-sdcc/pycomanage.git --upgrade
 
 echo "wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config_comanage.py https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub_config_comanage.py  "
 wget --output-document /usr/local/anaconda3/etc/jupyterhub/jupyterhub_config_comanage.py https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/jupyterhub_config_comanage.py
