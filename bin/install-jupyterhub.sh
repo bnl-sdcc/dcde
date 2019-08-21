@@ -28,6 +28,10 @@ export PATH=$PATH:$PREFIX/bin
 #echo "wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/anaconda.sh"
 #wget https://raw.githubusercontent.com/bnl-sdcc/dcde-config/master/etc/anaconda.sh
 
+# Install OS deps
+yum install git
+
+
 
 # Update anaconda 
 echo "conda update -y -n base -c defaults conda"
