@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 # 
 # Script to install and maintain parsl for all users on system. 
 #
@@ -8,52 +8,19 @@
 #  urllib3
 #  chardet
 #  
-#
+#   conda create -n dcde python=3.6
+#   conda activate dcde
+#   pip install parsl 
+#   oauth-ssh==0.9
+#   pip install paramiko==2.4.2
+#   pip install cryptography==2.4.2 
 
-SETUP="Anaconda3-5.3.1-Linux-x86_64.sh"
-PREFIX="/home/anaconda3"
-
-if [ `whoami` != 'root' ] ; then
-    echo "You must be root to do this."
-    exit
-fi
-# Set up anaconda
-echo "mkdir -p $PREFIX ~/tmp/"
-mkdir -p $PREFIX ~/tmp/
-echo "cd ~/tmp/"
-cd ~/tmp/
-echo "wget https://repo.anaconda.com/archive/$SETUP"
-wget https://repo.anaconda.com/archive/$SETUP
-echo "bash $SETUP -u -f -b -p $PREFIX"
-bash $SETUP -u -f -b -p $PREFIX
-echo "export PATH=$PATH:$PREFIX/bin"
-export PATH=$PATH:$PREFIX/bin
-
-
-# Update anaconda 
-echo "conda update -y -n dcde -c defaults conda"
-conda update -y -n dcde -c defaults conda
-
-echo "conda install python=3.6 conda-manager"
-conda install python=3.6 
-
-echo "conda update -y conda python"
-conda update -y conda python
-
-echo "conda install -y -c conda-forge"
-conda install -y -c conda-forge
-
-# Install app
-conda activate dcde
-
-echo "pip install --upgrade pip"
-pip install --upgrade pip
-
-echo "pip install parsl"
+wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+bash Anaconda3-5.3.1-Linux-x86_64.sh -u -f -b -p ~/
+export PATH=~/bin:$PATH
+conda update -n base -c defaults conda
+conda create -n dcde python=3.6
+conda init bash
+source activate dcde
 pip install parsl
 
-# Cleanup
-echo "cd ~/tmp"
-cd ~/tmp 
-echo "rm -f $SETUP"
-rm -f $SETUP
