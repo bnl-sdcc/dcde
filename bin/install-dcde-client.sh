@@ -22,5 +22,7 @@ conda update -n base -c defaults conda
 conda create -n dcde python=3.6
 conda init bash
 source activate dcde
-pip install parsl
-
+pip -q --no-color install parsl
+# Separate branch install
+# pip install git+https://github.com/Parsl/parsl.git@remote_interchange
+pip install oauth-ssh
