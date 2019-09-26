@@ -20,6 +20,7 @@ bash Anaconda3-5.3.1-Linux-x86_64.sh -u -f -b -p ~/
 export PATH=~/bin:$PATH
 conda update -n base -c defaults conda
 conda create -n dcde python=3.6
+# conda create -n dcdehtex python=3.6
 conda init bash
 source activate dcde
 pip -q --no-color install parsl
