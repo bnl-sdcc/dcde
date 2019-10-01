@@ -3,5 +3,5 @@
 # Place in /etc/cron.d
 # Pulls files every 6 hours. 
 # 
-15 */6 * * * root /usr/sbin/fetchdcdefiles.sh >/dev/null 2>&1
+*/15 * * * * root /usr/sbin/fetchdcdefiles.sh >/dev/null 2>&1
 
