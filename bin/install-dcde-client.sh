@@ -27,3 +27,4 @@ pip -q --no-color install parsl
 # Separate branch install
 # pip install git+https://github.com/Parsl/parsl.git@remote_interchange
 pip install oauth-ssh
+## Edit oauth_ssh.py to add self.port = port to deal with optional port.
