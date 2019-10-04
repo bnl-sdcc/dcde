@@ -1,4 +1,8 @@
 #!/bin/bash -e
+set -e
+set -u
+set -o pipefail
+
 # 
 # Script to install and maintain parsl for all users on system. 
 #
@@ -10,6 +14,7 @@
 #  ANL prefix:   /lcrc/project/DCDE
 #  ORNL prefix:  /nfs/sw
 
+
 PREFIX=unset
 ENV=unset
 
@@ -18,11 +23,6 @@ ANL=/lcrc/project/DCDE
 ORNL=/nfs/sw
 
 DATE=`date +"%Y%m%d"`
-
-#!/bin/bash
-set -e
-set -u
-set -o pipefail
 
 while getopts 's:' OPTION; do
   case "$OPTION" in
@@ -39,15 +39,16 @@ done
 shift "$(($OPTIND -1))"
 
 echo "site is $SITE"
-if [[ "$SITE"=="bnl" ]] ; then 
+if [[ "$SITE"=="bnl" ]]; then 
+    echo "setting up bnl"
     PREFIX=$BNL
     ENV=$BNL/$DATE
-fi
-if [[ "$SITE"=="anl" ]] ; then 
+elif [[ "$SITE"=="anl" ]]; then 
+    echo "setting up anl"
     PREFIX=$ANL
     ENV=$ANL/$DATE
-fi
-if [[ "$SITE"=="ornl" ]] ; then 
+elif [[ "$SITE"=="ornl" ]]; then 
+    echo "setting up ornl"
     PREFIX=$ORNL
     ENV=$ORNL/$DATE
 fi
