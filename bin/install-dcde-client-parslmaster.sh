@@ -39,15 +39,15 @@ done
 shift "$(($OPTIND -1))"
 
 echo "site is $SITE"
-if [ $SITE=='bnl' ] ; then 
+if [[ "$SITE"=="bnl" ]] ; then 
     PREFIX=$BNL
     ENV=$BNL/$DATE
 fi
-if [ $SITE=='anl' ] ; then 
+if [[ "$SITE"=="anl" ]] ; then 
     PREFIX=$ANL
     ENV=$ANL/$DATE
 fi
-if [ $SITE=='ornl' ] ; then 
+if [[ "$SITE"=="ornl" ]] ; then 
     PREFIX=$ORNL
     ENV=$ORNL/$DATE
 fi
