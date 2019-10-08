@@ -10,7 +10,7 @@ set -o pipefail
 #  parsl
 #  oauth-ssh
 #
-#  BNL prefix:   /direct/sdcc+u/dcde1000001   ~dcde1000001
+#  BNL prefix:   /hpcgpfs01/work/dcde
 #  ANL prefix:   /lcrc/project/DCDE
 #  ORNL prefix:  /nfs/sw
 
@@ -18,7 +18,7 @@ SITE=unset
 PREFIX=unset
 ENV=unset
 
-BNL=/direct/sdcc+u/dcde1000001   
+BNL=/hpcgpfs01/work/dcde   
 ANL=/lcrc/project/DCDE
 ORNL=/nfs/sw
 
