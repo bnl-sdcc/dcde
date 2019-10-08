@@ -10,7 +10,7 @@ set -o pipefail
 #  parsl
 #  oauth-ssh
 #
-#  BNL prefix:   /hpcgpfs01/work/dcde
+#  BNL prefix:   /sdcc/u/dcde1000012
 #  ANL prefix:   /lcrc/project/DCDE
 #  ORNL prefix:  /nfs/sw
 
