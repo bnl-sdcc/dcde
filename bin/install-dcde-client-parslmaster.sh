@@ -18,7 +18,7 @@ SITE=unset
 PREFIX=unset
 ENV=unset
 
-BNL=/hpcgpfs01/work/dcde   
+BNL=/sdcc/u/dcde1000012   
 ANL=/lcrc/project/DCDE
 ORNL=/nfs/sw
 
